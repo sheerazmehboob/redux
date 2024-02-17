@@ -1,0 +1,35 @@
+-> This file structure is recommended by redux-toolkit
+-> createSlice uses Immer library under the hood
+-> "Slice" should be the suffix of your state file recommended by redux-toolkit
+-> Normally we have to combine the reducers if we have multiple states but configureStire do it itself for developers
+
+Steps to create a store:
+(I am also mentioning the same steps in cakeSlice.js for better understanding)
+
+    1- Import createSlice method from redux-toolkit
+    2- Create a Slice for your state 
+        Slice will contain action and reducer of cake state
+        This slice accepts an object with 3 properties:
+            1- name of slice 
+            2- initial State 
+            3- reducer function
+    3- Define the initial state
+    4- Define the reducer mapping
+        Reducer is an object in which properties are the switch cases that we have in simple redux app
+        Every case accepts a state and action in parameters but in this case we only need state
+        createSlice will automatically generate action creator with the same name as we have reducer function
+    5- export reducer as default and actions as named export
+
+
+configure Store:
+(Check store.js file for better understanding)
+    1- Import configureStore function from redux-toolkit
+        configureStore accepts an object as argument. Specify all the reducers from reducer that belongs to features in parameters
+    2- export the store
+
+Dispatch an action:
+(Check index.js for better understanding)
+    1- Import your store
+    2- Import the actions of your features
+    3- Subscribe the store and you are good to go
+    4- Unsubscribe
