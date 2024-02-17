@@ -33,3 +33,17 @@ Dispatch an action:
     2- Import the actions of your features
     3- Subscribe the store and you are good to go
     4- Unsubscribe
+
+
+Adding Middleware:
+(npm i redux-logger)
+    1- Import reduxLogger to your store.js and use its createLogger function
+    2- To Apply middleware we apply use this logger after reducer property in store object like this
+            middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+                we concat this beacuse by default configureStore apply some middleware
+    
+Extra Reducers:
+    Extra reducers allow us to respond to the events of other states
+        For Example: We want to sell an icecream whenever we sell a cake as bonus
+    See icecreamSlice.js and with comment "Extra Reducers" for better understanding
+        
