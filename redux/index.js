@@ -1,4 +1,8 @@
 const redux = require('redux');
+const applyMiddleware = redux.applyMiddleware
+const reduxLogger = require('redux-logger')
+// Logger middleware
+const logger = reduxLogger.createLogger()
 
 const createStore = redux.createStore;
 
@@ -69,10 +73,11 @@ const reducer = (state = initialState, action) => {
     }
 };
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(logger));
 console.log('Initial State', store.getState());
 
-const unsubscribe = store.subscribe(() => console.log('Updated State', store.getState()));
+// removed  "console.log('Updated State', store.getState())" as now middleware will show logs when state updated
+const unsubscribe = store.subscribe(() => {});
 
 store.dispatch(buyCake());
 store.dispatch(buyCake());
