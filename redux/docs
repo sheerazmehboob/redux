@@ -1,0 +1,18 @@
+Redux:
+    Redux is a predictable state container for Javascript apps.
+
+Components of Redux:
+    1- Action -> Describe what happened
+    2- Reducer -> Calculates new states
+    3- Store -> Holds state and manages updates
+
+Immer:
+    Immer is a library that simplifies the process of writing immutable update logic. Immer provides a function called produce , which accepts two arguments: your original state , and a callback function.
+
+Redux Middleware:
+    Redux middleware provides a third-party extension point between dispatching an action, and the moment it reaches the reducer. We can use Redux middleware for logging, crash reporting, talking to an asynchronous API, routing, and more.
+
+
+Redux Thunk:
+    Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods dispatch and getState as parameters.
+
